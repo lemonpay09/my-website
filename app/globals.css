@@ -1,26 +1,51 @@
-@import "tailwindcss";
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- DARK THEME (默认主题) --- */
+  --background-start-rgb: 2, 6, 23; /* 深蓝黑 */
+  --background-end-rgb: 13, 17, 23;  /* 近黑色 */
+  --text-color: #e2e8f0;       /* 柔和的白色文字 */
+  --text-color-secondary: #8b949e; /* 次要文字 */
+  --primary-color: #38bdf8;     /* 天蓝色 */
+  --border-color: #30363d;
+  --card-background: #1e293b; /* 深蓝灰色卡片 */
+  --accent-green: #3fb950;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='light'] {
+  /* --- LIGHT THEME --- */
+  --background-start-rgb: 245, 245, 245; /* 柔和白 */
+  --background-end-rgb: 255, 255, 255;
+  --text-color: #1a202c;       /* 深灰色文字 */
+  --text-color-secondary: #4a5568;
+  --primary-color: #007bff;     /* 经典蓝色 */
+  --border-color: #e2e8f0;
+  --card-background: #ffffff;
+  --accent-green: #2f855a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  /* 动态渐变背景 */
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+}
+
+/* 调整全局容器，使其更宽 */
+.container {
+  max-width: 1100px; /* 从 960px 增加到 1100px */
+  margin: 0 auto;
+  padding: 0 2rem;
 }

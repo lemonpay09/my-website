@@ -1,0 +1,105 @@
+/* app/page.module.css */
+
+/* --- Header 样式 --- */
+.header {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.2s ease-in-out;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Hero (介绍) 样式 --- */
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* --- Projects Grid (项目网格) 样式 --- */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* 每行一个项目 */
+  gap: 2.5rem; /* 项目之间的间距 */
+}
+
+/* --- Project Card (单个项目卡片) 样式 --- */
+.card {
+  display: block;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cardImage {
+  width: 100%;
+  height: 400px; /* 固定图片高度 */
+  object-fit: cover; /* 保证图片不变形 */
+  background-color: #e9e9e9; /* 图片加载前的占位颜色 */
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cardContent p {
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #e9e9e9;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px; /* 圆角胶囊形状 */
+  font-size: 0.8rem;
+  font-weight: 500;
+}

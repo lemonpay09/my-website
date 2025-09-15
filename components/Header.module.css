@@ -1,0 +1,30 @@
+/* components/Header.module.css */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(var(--background-end-rgb), 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+}
+.logo { font-weight: 700; font-size: 1.5rem; color: var(--text-color); }
+.nav { display: flex; gap: 2.5rem; }
+.nav a { color: var(--text-color-secondary); font-weight: 500; transition: color 0.3s ease; text-decoration: none; }
+.nav a.active, .nav a:hover { color: var(--text-color); }
+
+.actions { display: flex; align-items: center; gap: 1.5rem; }
+.socialIcons { display: flex; gap: 1rem; }
+.iconButton { background: none; border: none; cursor: pointer; padding: 0; }
+.iconButton img { filter: var(--theme-icon-filter, invert(0.8)); transition: filter 0.3s; }
+.iconButton:hover img { filter: var(--theme-icon-filter-hover, invert(1)); }
+[data-theme='light'] .iconButton img { filter: var(--theme-icon-filter, invert(0.2)); }
+[data-theme='light'] .iconButton:hover img { filter: var(--theme-icon-filter-hover, invert(0)); }
+
+.themeToggle { background: var(--card-background); border: 1px solid var(--border-color); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; }

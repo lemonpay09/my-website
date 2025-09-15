@@ -1,0 +1,288 @@
+/* components/Sections.module.css */
+
+/* --- 通用版块样式 --- */
+.section {
+  padding: 6rem 0;
+  min-height: 80vh; /* 让每个版块都有足够的高度，方便滚动侦测 */
+  border-bottom: 1px solid var(--border-color);
+}
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+.sectionSubtitle { 
+  text-align: center; 
+  max-width: 600px; 
+  margin: -2rem auto 3rem; 
+  color: var(--text-color-secondary); 
+  line-height: 1.6;
+}
+.button { 
+  background-color: var(--primary-color); 
+  color: #fff; /* 按钮文字用纯白更突出 */
+  padding: 0.8rem 2rem; 
+  border-radius: 8px; 
+  text-decoration: none; 
+  font-weight: 500; 
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* --- Hero Section 样式 --- */
+.heroContent {
+  display: flex;
+  align-items: center;
+  gap: 5rem; /* 增加图片和文字的间距 */
+  width: 100%;
+}
+.profilePhoto {
+  width: 300px; /* 放大图片 */
+  height: 300px; /* 放大图片 */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-color);
+}
+.heroText {
+  flex: 1;
+  text-align: left; /* 文字左对齐，更有设计感 */
+}
+.title { 
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.description { 
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 2rem; 
+  line-height: 1.7;
+  color: var(--text-color-secondary);
+}
+
+/* --- Services 样式 --- */
+.servicesGrid { 
+  display: grid; 
+  /* 修改这里，强制两列布局 */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem; 
+  max-width: 900px; /* 限制最大宽度，让布局更舒适 */
+  margin: 0 auto; /* 居中网格 */
+}
+.serviceCard { 
+  background: var(--card-background); 
+  padding: 2rem; 
+  border-radius: 8px; 
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.serviceCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+.serviceCard h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-color); }
+.serviceCard p { color: var(--text-color-secondary); line-height: 1.6; }
+
+/* --- About Section 样式 --- */
+.aboutLayout {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 5rem;
+  align-items: start;
+}
+.aboutTitle { 
+  font-size: 2.2rem; 
+  margin-bottom: 1.5rem; 
+  text-align: left;
+}
+.moreAboutTitle { 
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  color: var(--text-color-secondary); 
+  margin-bottom: 1rem; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.aboutDescription { 
+  line-height: 1.8; 
+  color: var(--text-color-secondary);
+  font-size: 1.1rem;
+}
+.timeline { 
+  margin-top: 3rem; 
+  border-left: 1px solid var(--border-color); 
+  padding-left: 2rem; 
+}
+.timelineItem { 
+  position: relative; 
+  padding-bottom: 2.5rem; 
+}
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+.timelineDot {
+  position: absolute;
+  left: -2.05rem; /* 微调位置使其居中 */
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+.timelineDate { 
+  font-size: 0.8rem; 
+  color: var(--text-color-secondary); 
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.timelineContent h4 { 
+  font-weight: 600; 
+  color: var(--text-color); 
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+.timelineContent p { 
+  font-size: 0.95rem; 
+  color: var(--text-color-secondary); 
+  line-height: 1.6; 
+}
+
+/* --- Tech Stack 样式 --- */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.techCard {
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+.techCategoryTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+.techItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.techItem {
+  background-color: var(--border-color);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* --- Portfolio 样式 --- */
+.portfolioGrid { 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 2rem; 
+}
+.portfolioCard { 
+  background: var(--card-background); 
+  padding: 2rem; 
+  border-radius: 8px; 
+  border: 1px solid var(--border-color); 
+  text-decoration: none; 
+  color: inherit; 
+  transition: all 0.2s ease;
+}
+.portfolioCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+.portfolioCard h3 { font-size: 1.5rem; font-weight: 600; color: var(--text-color); margin-bottom: 0.5rem; }
+.portfolioCard p { color: var(--text-color-secondary); margin-bottom: 1.5rem; }
+.portfolioCard span { color: var(--primary-color); font-weight: 500; }
+
+/* --- Pricing 样式 --- */
+.pricingGrid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 2rem; 
+}
+.pricingCard { 
+  background: var(--card-background); 
+  padding: 2.5rem 2rem; 
+  border-radius: 8px; 
+  border: 1px solid var(--border-color); 
+  text-align: center; 
+}
+.pricingCard h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; }
+.price { 
+  font-size: 2.5rem; 
+  font-weight: 700; 
+  margin: 1rem 0; 
+  color: var(--primary-color);
+}
+.pricingCard ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+.pricingCard li { margin-bottom: 0.75rem; color: var(--text-color-secondary); }
+.contactCallout { 
+  text-align: center; 
+  margin-top: 3rem; 
+  font-size: 1.1rem;
+}
+.contactCallout a { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+
+/* components/Sections.module.css - 追加在末尾 */
+
+/* About Section 新增样式 */
+.aboutLeft {
+  display: flex;
+  flex-direction: column;
+}
+.aboutLeft h2 { /* 针对 My experiences 标题 */
+    margin-top: 3rem; /* 将文字部分向下推 */
+}
+.aboutImageContainer {
+  width: 100%;
+  padding-bottom: 85%; /* 增加高度比例，让图片更长 */
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.aboutImage {
+  border-radius: 8px;
+}
+
+/* Pricing Section 新增样式 */
+.contactCallout p {
+    margin-bottom: 1.5rem;
+}
+.footerSocials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.socialIcon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.socialIcon img {
+    width: 24px;
+    height: 24px;
+    filter: var(--theme-icon-filter, invert(0.6));
+    transition: filter 0.3s;
+}
+.socialIcon:hover img {
+    filter: var(--theme-icon-filter-hover, invert(0.8));
+}
+[data-theme='light'] .socialIcon img { filter: var(--theme-icon-filter, invert(0.4)); }
+[data-theme='light'] .socialIcon:hover img { filter: var(--theme-icon-filter-hover, invert(0.2)); }
